@@ -1,0 +1,34 @@
+name: Log merged PR to Google Sheet
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  log-pr:
+    if: ${{ github.event.pull_request.merged == true }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send PR data to Google Sheet
+        env:
+          WEBHOOK_URL: ${{ secrets.APPS_SCRIPT_WEBHOOK_URL }}
+          SECRET: ${{ secrets.APPS_SCRIPT_SECRET }}
+          AUTHOR: ${{ github.event.pull_request.user.login }}
+          AUTHOR_URL: ${{ github.event.pull_request.user.html_url }}
+          LABELS: ${{ toJson(github.event.pull_request.labels.*.name) }}
+        run: |
+          # GitHub doesn't always expose email in PR event, so we leave it blank unless provided
+          EMAIL=""
+          NAME="${AUTHOR}"
+          GITHUB_LINK="${AUTHOR_URL}"
+
+          cat <<EOF > payload.json
+          {
+            "contributor_name": "${NAME}",
+            "contributor_email": "${EMAIL}",
+            "github_link": "${GITHUB_LINK}",
+            "labels": ${LABELS},
+            "secret": "${SECRET}"
+          }
+          EOF
+
+          curl -s -X POST -H "Content-Type: application/json" -d @payload.json "$WEBHOOK_URL"
