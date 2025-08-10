@@ -36,7 +36,7 @@ export default function BountyDetailsPage() {
     difficulty: "Medium",
     timePosted: "2 hours ago",
     issueType: "Bug Fix",
-    claims: 3,
+    claimCount: 3,
     starred: 12,
     deadline: "2024-02-15",
     priority: "High",
@@ -133,7 +133,7 @@ export default function BountyDetailsPage() {
                   </div>
                   <div className="flex items-center">
                     <MessageSquare className="h-4 w-4 mr-1" />
-                    {bounty.claims.length} proposals
+                    {bounty.claimCount} proposals
                   </div>
                   <div className="flex items-center">
                     <Star className="h-4 w-4 mr-1" />
