@@ -10,7 +10,7 @@ OShub is an open-source platform where developers and maintainers can **place bo
 
 * 💰 **Place Bounties** – Maintainers can add issues with bounties to attract contributors.
 * 🏆 **Claim Bounties** – Developers can claim an issue, work on it, and earn rewards upon approval.
-* 透明 **Transparent Workflow** – Track issues, submissions, and payouts with ease.
+*  **Transparent Workflow** – Track issues, submissions, and payouts with ease.
 * 🔄 **Integration with GitHub** – Automatically syncs with repositories for seamless issue tracking.
 * ❤️ **Open Source First** – Fully community-driven platform to encourage contributions.
 
