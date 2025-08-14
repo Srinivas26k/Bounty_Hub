@@ -6,12 +6,13 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Checkbox } from "@/components/ui/checkbox"
-import { Github, Mail, Terminal } from "lucide-react"
+import { Github, Mail, Terminal, Eye, EyeOff } from "lucide-react"
 import { Link } from "react-router-dom"
 
 export default function LoginPage() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
+  const [showPassword, setShowPassword] = useState(false) // Toggle state
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-gray-900 to-slate-900 flex items-center justify-center p-4">
@@ -73,18 +74,25 @@ export default function LoginPage() {
                 required
               />
             </div>
-            <div className="space-y-2">
+            <div className="relative space-y-2">
               <Label htmlFor="password" className="text-white font-medium">
                 Password
               </Label>
               <Input
                 id="password"
-                type="password"
+                type={showPassword ? "text" : "password"} // toggle type
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="bg-gray-800/50 border-gray-700 text-white placeholder:text-gray-400 focus:border-emerald-500"
+                className="bg-gray-800/50 border-gray-700 text-white placeholder:text-gray-400 focus:border-emerald-500 pr-10"
                 required
               />
+              {/* Eye Icon */}
+              <div
+                className="absolute right-3 top-[60%] -translate-y-1/2 cursor-pointer text-gray-400 hover:text-gray-200"
+                onClick={() => setShowPassword(!showPassword)}
+              >
+                {showPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
+              </div>
             </div>
             <div className="flex items-center space-x-2">
               <Checkbox id="remember" className="border-gray-600" />

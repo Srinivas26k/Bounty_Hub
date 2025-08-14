@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Github, Mail, Terminal } from "lucide-react"
+import { Github, Mail, Terminal, Eye, EyeOff } from "lucide-react"
 import { Link } from "react-router-dom"
 
 export default function SignupPage() {
@@ -19,6 +19,9 @@ export default function SignupPage() {
     confirmPassword: "",
     userType: "",
   })
+
+  const [showPassword, setShowPassword] = useState(false)
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false)
 
   const updateFormData = (field: string, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }))
@@ -132,32 +135,46 @@ export default function SignupPage() {
               </Select>
             </div>
 
-            <div className="space-y-2">
+            {/* Password Field */}
+            <div className="relative space-y-2">
               <Label htmlFor="password" className="text-white font-medium">
                 Password
               </Label>
               <Input
                 id="password"
-                type="password"
+                type={showPassword ? "text" : "password"}
                 value={formData.password}
                 onChange={(e) => updateFormData("password", e.target.value)}
-                className="bg-gray-800/50 border-gray-700 text-white placeholder:text-gray-400 focus:border-emerald-500"
+                className="bg-gray-800/50 border-gray-700 text-white placeholder:text-gray-400 focus:border-emerald-500 pr-10"
                 required
               />
+              <div
+                className="absolute right-3 top-[60%] -translate-y-1/2 cursor-pointer text-gray-400 hover:text-gray-200"
+                onClick={() => setShowPassword(!showPassword)}
+              >
+                {showPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
+              </div>
             </div>
 
-            <div className="space-y-2">
+            {/* Confirm Password Field */}
+            <div className="relative space-y-2">
               <Label htmlFor="confirmPassword" className="text-white font-medium">
                 Confirm Password
               </Label>
               <Input
                 id="confirmPassword"
-                type="password"
+                type={showConfirmPassword ? "text" : "password"}
                 value={formData.confirmPassword}
                 onChange={(e) => updateFormData("confirmPassword", e.target.value)}
-                className="bg-gray-800/50 border-gray-700 text-white placeholder:text-gray-400 focus:border-emerald-500"
+                className="bg-gray-800/50 border-gray-700 text-white placeholder:text-gray-400 focus:border-emerald-500 pr-10"
                 required
               />
+              <div
+                className="absolute right-3 top-[60%] -translate-y-1/2 cursor-pointer text-gray-400 hover:text-gray-200"
+                onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+              >
+                {showConfirmPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
+              </div>
             </div>
 
             <div className="flex items-center space-x-2">
