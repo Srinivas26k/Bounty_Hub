@@ -3,7 +3,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { Code, IndianRupee, Users, Clock, Award, Zap, Target, Shield, Terminal, GitBranch, Bug } from "lucide-react"
 import { Link } from "react-router-dom"
-
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-gray-900 to-slate-900">

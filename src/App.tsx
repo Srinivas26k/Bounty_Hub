@@ -7,10 +7,12 @@ import CreatePage from "./components/CreatePage"
 import BountyDetailsPage from "./components/BountyDetailsPage"
 import LoginPage from "./components/LoginPage"
 import SignupPage from "./components/SignupPage"
+import ScrollToTop from "./components/ScrollToTop"
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="min-h-screen bg-gradient-to-br from-slate-900 via-gray-900 to-slate-900">
         <Routes>
           <Route
