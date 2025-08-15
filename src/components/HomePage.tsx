@@ -3,29 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { Code, IndianRupee, Users, Clock, Award, Zap, Target, Shield, Terminal, GitBranch, Bug } from "lucide-react"
 import { Link } from "react-router-dom"
-import { useState, useEffect } from "react";
-import { ArrowUp } from "lucide-react";
-
-
 export default function HomePage() {
-  const [showScrollTop, setShowScrollTop] = useState(false);
-
-useEffect(() => {
-  const handleScroll = () => {
-    if (window.scrollY > 300) {
-      setShowScrollTop(true);
-    } else {
-      setShowScrollTop(false);
-    }
-  };
-
-  window.addEventListener("scroll", handleScroll);
-  return () => window.removeEventListener("scroll", handleScroll);
-}, []);
-
-const scrollToTop = () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-};
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-gray-900 to-slate-900">
       {/* Hero Section */}
@@ -326,16 +304,6 @@ const scrollToTop = () => {
           </div>
         </div>
       </section>
-      {showScrollTop && (
-  <button
-    onClick={scrollToTop}
-    className="fixed bottom-6 right-6 p-3 rounded-full bg-emerald-600/80 hover:bg-emerald-700/90 text-white shadow-lg transition-transform transform hover:scale-110 z-50"
-    aria-label="Scroll to top"
-  >
-    <ArrowUp className="h-5 w-5" />
-  </button>
-)}
-
     </div>
   )
 }
