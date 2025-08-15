@@ -7,7 +7,7 @@ import CreatePage from "./components/CreatePage"
 import BountyDetailsPage from "./components/BountyDetailsPage"
 import LoginPage from "./components/LoginPage"
 import SignupPage from "./components/SignupPage"
-import ScrollToTop from "./components/ScrolltoTop"
+import ScrollToTop from "./components/ScrollToTop"
 
 function App() {
   return (
