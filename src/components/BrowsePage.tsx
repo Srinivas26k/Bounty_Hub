@@ -5,8 +5,28 @@ import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { IndianRupee, Clock, Search, Star, MessageSquare, TrendingUp, Filter, SortAsc } from "lucide-react"
 import { Link } from "react-router-dom"
+import { useState, useEffect } from "react";
+import { ArrowUp } from "lucide-react";
 
 export default function BrowsePage() {
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+useEffect(() => {
+  const handleScroll = () => {
+    if (window.scrollY > 300) {
+      setShowScrollTop(true);
+    } else {
+      setShowScrollTop(false);
+    }
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
+
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
   const bounties = [
     {
       id: 1,
@@ -279,6 +299,16 @@ export default function BrowsePage() {
           </Button>
         </div>
       </div>
+      {showScrollTop && (
+  <button
+    onClick={scrollToTop}
+    className="fixed bottom-6 right-6 p-3 rounded-full bg-emerald-600/80 hover:bg-emerald-700/90 text-white shadow-lg transition-transform transform hover:scale-110 z-50"
+    aria-label="Scroll to top"
+  >
+    <ArrowUp className="h-5 w-5" />
+  </button>
+)}
+
     </div>
   )
 }
