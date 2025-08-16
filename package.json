@@ -17,6 +17,7 @@
     "@radix-ui/react-separator": "^1.1.7",
     "@radix-ui/react-slot": "^1.2.3",
     "class-variance-authority": "^0.7.1",
+    "gsap": "^3.13.0",
     "lucide-react": "^0.528.0",
     "react": "^18.2.0",
     "react-avatar": "^5.0.4",
@@ -26,6 +27,7 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "@types/gsap": "^3.0.0",
     "@types/postcss-load-config": "^2.0.1",
     "@types/react": "^18.3.23",
     "@types/react-dom": "^18.3.7",
