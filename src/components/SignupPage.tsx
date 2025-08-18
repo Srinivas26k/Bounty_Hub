@@ -9,7 +9,7 @@ import { Checkbox } from "@/components/ui/checkbox"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Github, Mail, Terminal, Eye, EyeOff } from "lucide-react"
 import { Link } from "react-router-dom"
-import AuthService from "@/services/authService"   // ✅ import your AuthService
+import AuthService from "@/services/authService"
 
 export default function SignupPage() {
   const [formData, setFormData] = useState({
