@@ -8,7 +8,7 @@ import { Label } from "@/components/ui/label"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Github, Mail, Terminal, Eye, EyeOff } from "lucide-react"
 import { Link, useNavigate } from "react-router-dom"
-import authService from "@/services/authService" // 👈 import service
+import authService from "@/services/authService"
 
 export default function LoginPage() {
   const [email, setEmail] = useState("")
@@ -25,9 +25,9 @@ export default function LoginPage() {
     const result = await authService.signIn(email, password)
 
     if (result.success) {
-      navigate("/dashboard") // 👈 redirect only if verified
+      navigate("/dashboard")
     } else {
-      setError(result.message) // Show error (e.g., "Please verify your email...")
+      setError(result.message)
     }
 
     setLoading(false)
