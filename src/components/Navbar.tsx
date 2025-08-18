@@ -16,6 +16,15 @@ export default function Navbar() {
             </Link>
           </div>
           <div className="flex items-center space-x-4">
+
+            <Link to="/guide">
+            <Button variant="ghost" className="text-gray-300 hover:bg-gray-800/50 hover:text-white">
+                Guide
+              </Button>
+            
+            </Link>
+
+
             <Link to="/browse">
               <Button variant="ghost" className="text-gray-300 hover:bg-gray-800/50 hover:text-white">
                 Browse Issues
