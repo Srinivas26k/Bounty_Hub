@@ -8,6 +8,7 @@ import BountyDetailsPage from "./components/BountyDetailsPage"
 import LoginPage from "./components/LoginPage"
 import SignupPage from "./components/SignupPage"
 import ScrollToTop from "./components/ScrollToTop"
+import GuidePage from "./components/ui/Guide"
 
 function App() {
   return (
@@ -31,6 +32,16 @@ function App() {
               <>
                 <Navbar />
                 <BrowsePage />
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path="/guide"
+            element={
+              <>
+                <Navbar />
+                <GuidePage/>
                 <Footer />
               </>
             }
