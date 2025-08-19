@@ -225,10 +225,9 @@ export default function BrowsePage() {
         </div>
 
         {/* Filters */}
-        <div className="bg-black/20 backdrop-blur-sm rounded-xl border border-gray-800/50 p-6 mb-8">
-          <div className="grid grid-cols-1 md:grid-cols-6 gap-4 items-center">
-            {/* Search */}
-            <div className="relative md:col-span-2">
+        <div className="bg-black/20 backdrop-blur-sm rounded-xl border border-gray-800/50 p-4 sm:p-6 mb-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+            <div className="relative sm:col-span-2 xl:col-span-2">
               <Search
                 className="absolute left-3 top-3 h-4 w-4 text-gray-400 cursor-pointer"
                 onClick={handleApplyFilters}
@@ -294,6 +293,34 @@ export default function BrowsePage() {
               Apply Filters
             </Button>
           </div>
+        </div>
+
+        {/* Stats Bar */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+          <Card className="bg-gradient-to-r from-emerald-500/10 to-blue-500/10 border-emerald-500/20 backdrop-blur-sm">
+            <CardContent className="p-4 text-center">
+              <div className="text-2xl font-bold text-emerald-400 font-mono">24</div>
+              <div className="text-sm text-gray-300">Active Issues</div>
+            </CardContent>
+          </Card>
+          <Card className="bg-gradient-to-r from-green-500/10 to-emerald-500/10 border-green-500/20 backdrop-blur-sm">
+            <CardContent className="p-4 text-center">
+              <div className="text-2xl font-bold text-green-400 font-mono">₹2.4L</div>
+              <div className="text-sm text-gray-300">Total Bounties</div>
+            </CardContent>
+          </Card>
+          <Card className="bg-gradient-to-r from-blue-500/10 to-cyan-500/10 border-blue-500/20 backdrop-blur-sm">
+            <CardContent className="p-4 text-center">
+              <div className="text-2xl font-bold text-blue-400 font-mono">156</div>
+              <div className="text-sm text-gray-300">Online Developers</div>
+            </CardContent>
+          </Card>
+          <Card className="bg-gradient-to-r from-orange-500/10 to-red-500/10 border-orange-500/20 backdrop-blur-sm">
+            <CardContent className="p-4 text-center">
+              <div className="text-2xl font-bold text-orange-400 font-mono">3</div>
+              <div className="text-sm text-gray-300">Critical Priority</div>
+            </CardContent>
+          </Card>
         </div>
 
         {/* Bounties Grid */}
