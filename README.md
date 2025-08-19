@@ -83,7 +83,7 @@ Make sure you have the following installed on your system:
 1.  **Fork the repository** by clicking the 'Fork' button on the top right of the GitHub page.
 2.  **Clone your forked repository:**
     ```sh
-    git clone [https://github.com/YOUR_USERNAME/OSHub.git](https://github.com/YOUR_USERNAME/OSHub.git)
+    git clone [https://github.com/HimanshuKabra01/OSHub.git](https://github.com/HimanshuKabra01/OSHub.git)
     ```
 3.  **Navigate to the project directory:**
     ```sh
