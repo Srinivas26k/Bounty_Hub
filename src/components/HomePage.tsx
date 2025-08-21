@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Code, IndianRupee, Users, Clock, Award, Zap, Target, Shield, Terminal, GitBranch, Bug } from "lucide-react"
+import { Code, IndianRupee, Users, Clock, Award, Zap, Target, Shield, Terminal, GitBranch, Bug, Book } from "lucide-react"
 import { Link } from "react-router-dom"
 import { useEffect } from "react";
 import gsap from "gsap";
@@ -52,26 +52,22 @@ export default function HomePage() {
 
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <div className="mb-6">
-            <Badge className="bg-gradient-to-r from-emerald-500/10 to-blue-500/10 text-emerald-300 border-emerald-500/20 mb-4">
-              <Code className="h-3 w-3 mr-1" />
-              Open Source Bounty Platform
-            </Badge>
           </div>
           <h1 className="text-6xl font-bold text-white mb-6 leading-tight">
-            Code Solutions,{" "}
+            Learn, Compete,{" "}
             <span className="bg-gradient-to-r from-emerald-400 via-blue-400 to-emerald-400 bg-clip-text text-transparent">
-              Earn Bounties
+              Earn
             </span>
           </h1>
           <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
-            A professional platform connecting developers with technical challenges. Contribute to open source projects,
-            solve complex problems, and get rewarded for your expertise.
+           From seasoned developers to aspiring students, solve challenges, rise through the ranks, and earn bounties. Build skills, gain recognition, and make an impact in open source.
           </p>
           <div className="flex justify-center space-x-4">
             <Link to="/browse">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-emerald-600 to-blue-600 hover:from-emerald-700 hover:to-blue-700 text-white px-8 py-4 text-lg"
+                variant="outline"
+                className="border-emerald-500/50 text-emerald-400 hover:bg-emerald-500/10 hover:text-emerald-300 px-8 py-4 text-lg bg-transparent"
               >
                 <GitBranch className="mr-2 h-5 w-5" />
                 Browse Issues
@@ -85,6 +81,15 @@ export default function HomePage() {
               >
                 <Bug className="mr-2 h-5 w-5" />
                 Post Bounty
+              </Button>
+            </Link>
+            <Link to="/courses">
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-emerald-500/50 text-emerald-400 hover:bg-emerald-500/10 hover:text-emerald-300 px-8 py-4 text-lg bg-transparent">
+                <Book className="mr-2 h-5 w-5" />
+                Explore Courses
               </Button>
             </Link>
           </div>
