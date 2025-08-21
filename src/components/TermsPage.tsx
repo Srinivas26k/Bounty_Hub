@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 export default function TermsPage() {
   return (

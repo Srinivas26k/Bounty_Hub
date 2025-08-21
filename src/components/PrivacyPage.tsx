@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+// random
 
 export default function PrivacyPage() {
   return (
