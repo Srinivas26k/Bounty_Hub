@@ -9,6 +9,8 @@ import LoginPage from "./components/LoginPage"
 import SignupPage from "./components/SignupPage"
 import ScrollToTop from "./components/ScrollToTop"
 import GuidePage from "./components/Guide"
+import DocsPage from "./pages/DocsPage";
+
 
 function App() {
   return (
@@ -66,6 +68,16 @@ function App() {
               </>
             }
           />
+          <Route
+  path="/docs"
+  element={
+    <>
+      <Navbar />
+      <DocsPage />
+      
+    </>
+  }
+/>
           <Route path="/auth/login" element={<LoginPage />} />
           <Route path="/auth/signup" element={<SignupPage />} />
         </Routes>
