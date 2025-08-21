@@ -11,6 +11,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import GuidePage from "./components/Guide";
 import PrivacyPage from "./components/PrivacyPage";
 import TermsPage from "./components/TermsPage";
+import DocsPage from "./pages/DocsPage";
 
 function App() {
   return (
@@ -67,6 +68,16 @@ function App() {
               </>
             }
           />
+          <Route
+  path="/docs"
+  element={
+    <>
+      <Navbar />
+      <DocsPage />
+      
+    </>
+  }
+/>
           <Route path="/auth/login" element={<LoginPage />} />
           <Route path="/auth/signup" element={<SignupPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
