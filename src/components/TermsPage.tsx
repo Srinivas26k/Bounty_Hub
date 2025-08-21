@@ -3,6 +3,8 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 // import { Link } from "react-router-dom";
 
+
+
 export default function TermsPage() {
   return (
     <div className="flex flex-col min-h-screen bg-gradient-to-br from-slate-900 via-gray-900 to-slate-900">
