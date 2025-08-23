@@ -331,12 +331,9 @@ export default function BrowsePage() {
               className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 border-gray-700/50 hover:border-emerald-500/30 transition-all duration-300 hover:shadow-2xl hover:shadow-emerald-500/10 backdrop-blur-sm group"
             >
               <CardHeader>
-                <div className="flex justify-between items-start mb-3">
-                  <div className="flex items-center space-x-2">
-                    <Badge
-                      variant="secondary"
-                      className="bg-gray-700 text-gray-300 font-mono text-xs"
-                    >
+                <div className="flex flex-wrap justify-between items-start gap-2 mb-3">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <Badge variant="secondary" className="bg-gray-700 text-gray-300 font-mono text-xs">
                       {bounty.language}
                     </Badge>
                     <Badge
@@ -356,7 +353,7 @@ export default function BrowsePage() {
                       </Badge>
                     )}
                   </div>
-                  <div className="flex items-center text-emerald-400 font-bold text-lg font-mono">
+                  <div className="flex items-center text-emerald-400 font-bold text-lg font-mono shrink-0">
                     <IndianRupee className="h-4 w-4 mr-1" />
                     {bounty.bounty.toLocaleString()}
                   </div>
@@ -369,7 +366,7 @@ export default function BrowsePage() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="flex justify-between items-center text-sm text-gray-500 mb-4">
+                <div className="flex flex-wrap justify-between items-center gap-2 text-sm text-gray-500 mb-4">
                   <div className="flex items-center">
                     <Clock className="h-4 w-4 mr-1" />
                     {bounty.timePosted}
@@ -386,7 +383,7 @@ export default function BrowsePage() {
                     {bounty.difficulty}
                   </Badge>
                 </div>
-                <div className="flex justify-between items-center">
+                <div className="flex flex-wrap justify-between items-center gap-4">
                   <div className="flex items-center space-x-4 text-sm text-gray-400">
                     <div className="flex items-center">
                       <MessageSquare className="h-4 w-4 mr-1" />
@@ -397,10 +394,10 @@ export default function BrowsePage() {
                       {bounty.starred}
                     </div>
                   </div>
-                  <Link to={`/bounty/${bounty.id}`}>
+                  <Link to={`/bounty/${bounty.id}`} className="w-full sm:w-auto">
                     <Button
                       size="sm"
-                      className="bg-gradient-to-r from-emerald-600 to-blue-600 hover:from-emerald-700 hover:to-blue-700 text-sm"
+                      className="bg-gradient-to-r from-emerald-600 to-blue-600 hover:from-emerald-700 hover:to-blue-700 text-sm w-full"
                     >
                       View Details
                     </Button>
@@ -427,5 +424,5 @@ export default function BrowsePage() {
         )}
       </div>
     </div>
-  );
+  )
 }
